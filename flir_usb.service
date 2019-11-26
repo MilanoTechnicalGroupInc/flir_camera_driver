@@ -1,0 +1,9 @@
+[Unit]
+Description=FLIR USB Memory buffer adjustment
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 1000 > /sys/module/usbcore/parameters/usbfs_memory_mb"
+
+[Install]
+WantedBy=multi-user.target
